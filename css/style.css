@@ -364,8 +364,14 @@ background-color: #010208;
     text-align: center;
 
 }
+.show{
+    display: block;
+}
 .hide{
     display: none;
+}
+.active{
+    color: #ffc209;
 }
 .color{
     color: #ffc209;

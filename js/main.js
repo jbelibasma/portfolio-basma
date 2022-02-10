@@ -151,3 +151,32 @@ btn.onmousemove=function(e){
     btn.style.setProperty('--x',x+'px');
     btn.style.setProperty('--y',y+'px');
 }
+/** projet */
+let links=document.querySelectorAll('.link-projet');
+console.log(links)
+let contenu=document.querySelectorAll('.section1-portfolio');
+console.log(contenu);
+
+for (let lien = 0; lien < links.length; lien++) {
+    links[lien].addEventListener("click", (e)=>
+        {
+            e.preventDefault();
+            const navitem=links[lien].dataset.link;
+            for (let l = 0; l < contenu.length; l++) {
+                contenu[l].style.display="none";
+                if(navitem==contenu[l].dataset.link){
+                    contenu[l].style.display="block";
+        
+                }
+                else if(navitem=="html && css"){
+                    contenu[l].style.display="block";
+        
+                }
+            }
+        
+        }
+    );
+  }
+
+// console.log(window.scrollY);
+
