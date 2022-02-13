@@ -9,24 +9,25 @@ let j=0;
 function clicked()
 { 
    if(j==slider.length-1){
-      slider[j].classList.remove('show');
+      slider[j].classList.remove('show-service');
       slider[j].classList.add('hide');
+
 
 
     j=0
     slider[j].classList.remove('hide')
-    slider[j].classList.add('show');
+    slider[j].classList.add('show-service');
 
 
    }
    else{
-      slider[j].classList.remove('show');
+      slider[j].classList.remove('show-service');
       slider[j].classList.add('hide');
 
 
     j++
     slider[j].classList.remove('hide');
-    slider[j].classList.add('show');
+    slider[j].classList.add('show-service');
 
    }
   
@@ -34,19 +35,19 @@ function clicked()
 function Prevs()
 { 
       if(j==0){
-      slider[j].classList.remove('show');
+      slider[j].classList.remove('show-service');
       slider[j].classList.add('hide');
       j=slider.length-1
       slider[j].classList.remove('hide');
-      slider[j].classList.add('show')
+      slider[j].classList.add('show-service')
 
    }
    else{
-      slider[j].classList.remove('show');
+      slider[j].classList.remove('show-service');
       slider[j].classList.add('hide');
     j--
     slider[j].classList.remove('hide');
-    slider[j].classList.add('show');
+    slider[j].classList.add('show-service');
    }
    
     
@@ -59,23 +60,23 @@ function play() {
       function clicked()
       { 
          if(j==slider.length-1){
-            slider[j].classList.remove('show');
+            slider[j].classList.remove('show-service');
             slider[j].classList.add('hide');
 
 
 
           j=0
           slider[j].classList.remove('hide')
-          slider[j].classList.add('show');
+          slider[j].classList.add('show-service');
 
          }
          else{
-            slider[j].classList.remove('show');
+            slider[j].classList.remove('show-service');
             slider[j].classList.add('hide');
 
           j++
           slider[j].classList.remove('hide');
-          slider[j].classList.add('show');
+          slider[j].classList.add('show-service');
 
          }
         

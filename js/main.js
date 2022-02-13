@@ -165,13 +165,13 @@ for (let lien = 0; lien < links.length; lien++) {
             for (let l = 0; l < contenu.length; l++) {
                 contenu[l].style.display="none";
                 if(navitem==contenu[l].dataset.link){
-                    contenu[l].style.display="block";
+                    contenu[l].style.display="flex";
         
                 }
-                else if(navitem=="html && css"){
-                    contenu[l].style.display="block";
+                // else if(navitem=="all"){
+                //     contenu[l].style.display="flex";
         
-                }
+                // }
             }
         
         }

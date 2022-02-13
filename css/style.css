@@ -312,10 +312,13 @@ h2{
 
 
 }
+.article-service .single-services:hover .services-text a{
+    background-color: #ffc209;
+}
 .bi-webcam{
     font-size: 5rem;
 }
-.article-service ,.show{
+.article-service ,.show-service{
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
@@ -368,7 +371,7 @@ background-color: #010208;
     display: block;
 }
 .hide{
-    display: none;
+    display: none !important;
 }
 .active{
     color: #ffc209;
@@ -530,30 +533,30 @@ background-color: #010208;
     margin-right: -15px;
     margin-left: -15px;
 }
-.section5,.section6{
+.section6{
     position: relative;
 }
 .section-portfolio h2{
     position: absolute; 
-    top:5%;
+    top:8%;
     left: 43%;
-    transform: translate(5%-43%);
+    transform: translate(8%-43%);
 
 }
 .section1-portfolio {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    padding:  4rem;
+    padding:  2rem;
 
 }
 
-figure{
+.section1-portfolio figure{
     position: relative;
     height: 50rem;
     margin: 2rem 0;
-    flex-basis: 18%;
+    flex-basis: 25%;
 }
 
 figure img {
@@ -641,9 +644,12 @@ figure:hover figcaption{
     opacity: 1; 
 }
 
-.portfolio-nav,#contact{
-    padding-top: 15rem;
+#contact, .portfolio-nav{
+    padding-top: 12rem;
     text-align: center;
+}
+.Recent{
+    position: relative;
 }
 .section-touch h2{
     position: absolute; 
@@ -705,6 +711,44 @@ form .controls div div .after-btn span:hover{
     margin: 0;
 }
 
+/***** mobil *******/
+@media screen and (max-width: 767px)
+{
+    nav{
+        margin-left: 25rem;
+        justify-content: center;
+    
+    }
+    .active{
+        margin-left: 25rem;
+        justify-content: center;
+        width: 100%;
+
+    }
+    body{
+        background-color: #010208;
+        color: #ffffff;
+        background-image: url(../img/body.jpg);
+        background-repeat: no-repeat ;
+        background-attachment: fixed;
+        font-size: 2rem;
+        overflow: scroll;
+    
+    
+    
+    }
+    .main{
+        width: 100%;
+        padding-left: 20rem;
+    }
+    
+    
+    
+}
+/*******tablette ***/
+@media  screen and (min-width:768px) and (max-width:1023px)
+{
+}
 
 
 
