@@ -14,7 +14,7 @@ body{
     background-repeat: no-repeat ;
     background-attachment: fixed;
     font-size: 2rem;
-    overflow: scroll;
+    /* overflow: scroll; */
 
 
 
@@ -32,7 +32,9 @@ a:hover,.chevron i:hover{
     color: rgb(17, 17, 17) ;
     background-color:#ffc209 !important;
 }
-
+.active-link{
+    color: #ffc209;
+}
 .active{
     width: 100%;
     background-color: #ffffff;
@@ -89,6 +91,9 @@ nav a span{
     font-family: 'Rubik', sans-serif;
 
 }
+.mobil-nav{
+    display: none;
+}
 nav .logo{
     color: #fff;
     font-size: 2.8rem;
@@ -109,6 +114,9 @@ nav ul li a:hover{
         /* background-color: #d3d3d4; */
     color: #ffc209;
     border-radius: 5rem;
+}
+.position-start{
+    position: relative;
 }
  .position-relative{
     position: absolute;
@@ -152,7 +160,7 @@ h3,h1,.position-relative .button{
     color: #ce723c;
 }
 h1{
-    font-size: 4rem;
+    font-size: 2.8rem;
     margin-bottom: 3rem;
 }
 h3{
@@ -213,9 +221,8 @@ h3{
 
 .chevron{
     position: absolute;
-    top: 88%;
+    top: 700px;
     left: 48%;
-    transform: translate(88%-48%); 
     font-size: 1.5rem;
     background-color: #38393d;
     padding: 0.5rem 1rem;
@@ -265,7 +272,7 @@ h3{
     border-radius: 50%;
 }
 .section-about h2{
-margin-top: 17rem;
+    margin-top: 17rem;
 }
 
 .section-about{
@@ -350,8 +357,8 @@ background-color: #010208;
 .section-work h2{
     position: absolute;
     top: 2%;
-    left: 45%;
-    transform: translate(2%-45%);
+    left: 42%;
+    transform: translate(2%-42%);
     text-align: center;
 
 }
@@ -373,7 +380,7 @@ background-color: #010208;
 .hide{
     display: none !important;
 }
-.active{
+.active, .link-active{
     color: #ffc209;
 }
 .color{
@@ -710,44 +717,233 @@ form .controls div div .after-btn span:hover{
     background-color: #010208;
     margin: 0;
 }
+.footer-Designed{
+    text-align: center;
+}
 
 /***** mobil *******/
-@media screen and (max-width: 767px)
+@media  screen and (max-width:767px)
 {
-    nav{
-        margin-left: 25rem;
+    main{
+        max-width: 70rem;
+        height: 100vh;
+    }
+    /* header (logo and menu)*/
+    .mobil-nav{
+        display: flex;
         justify-content: center;
+        font-family: 'Rubik', sans-serif;
+        padding-top: 4rem;
+        position: fixed;
+        z-index: 10;
+
+    }
+    /* .menu-position{
+        position: relative;
+    } */
+    .mobil-nav>a{
+        padding-left: 2rem;
+    }
+    /* color logo*/
+    .mobil-nav>a span{
+        color: #ffc209;
+    }
+    /* header fixed en scroll*/
+    .menu-header{
+        position: fixed;
+        top: 5%;
+        right: 9%;
+        transform: translate(5%-9%); 
+        z-index: 3;
+        font-size: 2rem;
+    }
+    /* start create button menu*/
+    .menu-header .chek{
+        z-index: 3;
+        cursor: pointer;
+        width: 5rem;
+        height: 5rem;
+        opacity: 0;
+    }
+    .menu-header .chek, .menu-header .menu-chek{
+        position: absolute;
+        top: 0;
+        right: 0;
     
     }
-    .active{
+    
+    .menu-header .menu-chek{
+        z-index: 1;
+        width: 3rem;
+        height: 3rem;
+        padding: 0.1rem 0.5rem;
+        background-color:#ffc209;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .menu-header .menu-chek>div{
+        position: relative;
+        width:100%;
+        height: 0.2rem;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+        
+    }
+    .menu-header .menu-chek>div:before, .menu-header .menu-chek>div:after{
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: -1rem;
+        width: 100%;
+        height: 0.2rem;
+        background: inherit;
+    }
+    .menu-header .menu-chek>div::before{
+        top: 1rem; 
+    }
+    .menu-header .chek:checked + .menu-chek>div{
+        transform: rotate(135deg);
+    }
+    .menu-header .chek:checked + .menu-chek>div:before, .menu-header .chek:checked + .menu-chek>div:after{
+        top: 0;
+        transform: rotate(90deg);
+    }
+    .menu-header .menu>div>div{
+        max-width: 70vw;
+        max-height: 100vh;
+        opacity: 0;
+        padding-top: 3rem;
+        transition: opacity 0.4s ease;
+    }
+    /* end create button menu mobil*/
+    /* menu in disktop invisible*/
+    .menu-nav
+     {
+        display: none;
+        justify-content: center;
+        transform: scale(0);
+        transition: all 0.4s ease;
+
+    }
+    .nav{
+        display: block;
+    }
+    /* create menu mobil*/
+    .active-menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+        margin-top: 8rem;
+        text-align: center;
+        z-index: 10;
+        background-color: #fff;
+        width: 100vw;
+        height: 100%;
+        transition: opacity 0.4s ease;
+
+
+    }
+    .active-menu li a{
+        color: #ffc209;
+        font-size: 3rem;
+
+    }
+    /* .active{
         margin-left: 25rem;
         justify-content: center;
         width: 100%;
 
-    }
-    body{
-        background-color: #010208;
-        color: #ffffff;
-        background-image: url(../img/body.jpg);
-        background-repeat: no-repeat ;
-        background-attachment: fixed;
-        font-size: 2rem;
-        overflow: scroll;
-    
-    
+    } */
+    .position-relative .work-contact a{
+        padding: 0.5rem 2rem ;
     
     }
-    .main{
-        width: 100%;
-        padding-left: 20rem;
+    .work-contact{
+        left: 5%;
     }
+    .section1-about{
+        flex-direction: column-reverse;
+    }
+    .section1-about>div p{
+    padding: 0 3rem;    
+    }
+    .section3{
+        display: none;
+        position: relative;
+    }
+    .section-about{
+        top:850px;
+        left: 25%;
+        /* transform: translate(100%-20%); */
+    }
+    .section-service h2,.section-skills h2,.section-portfolio h2,.section-touch h2{
+        left: 35%;
+        font-size: 2.5rem;
+
+    }
+     .portfolio-nav  {
+         padding: 4rem 0.25rem;
+     }
+     .portfolio-nav .nav ul, .footer-Designed{
+
+         font-size: 1rem;
+     }
+         
+     
     
+    
+ 
     
     
 }
 /*******tablette ***/
 @media  screen and (min-width:768px) and (max-width:1023px)
 {
+    main{
+        max-width: 100rem;
+        height: 100vh;
+    }
+
+    .position-relative .work-contact a{
+        padding: 0.5rem 2rem ;
+    
+    }
+    .work-contact{
+        left: 25%;
+    }
+    .section1-about{
+        flex-direction: column-reverse;
+    }
+    .section1-about>div p{
+    padding: 0 3rem;    
+    }
+    .section3{
+        display: none;
+        position: relative;
+    }
+    .section-about{
+        top:850px;
+        left: 37%;
+        /* transform: translate(100%-20%); */
+    }
+    .section-service h2,.section-skills h2,.section-portfolio h2,.section-touch h2{
+        left: 40%;
+        font-size: 2.5rem;
+
+    }
+     .portfolio-nav  {
+         padding: 4rem 0.25rem;
+     }
+     .portfolio-nav .nav ul, .footer-Designed{
+
+         font-size: 1.8rem;
+     }
+         
+     
 }
 
 

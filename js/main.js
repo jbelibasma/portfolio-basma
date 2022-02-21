@@ -1,5 +1,43 @@
 "user strict";
 // typed texed
+
+/** btn menu mobil */
+let butn=document.querySelector('.mobil-nav');
+let menu=document.getElementById('menu-nav');
+console.log(menu)
+function showmenu(){
+    menu.classList.toggle('menu-nav');
+    menu.classList.toggle('active-menu');
+
+}
+butn.addEventListener('click', showmenu);
+/** end menu mobil */
+/** active link */
+let sections=document.querySelectorAll('section');
+let btn_active=document.querySelectorAll('.nav ul li');
+
+window.addEventListener('scroll',()=>{
+    let current='';
+    sections.forEach(section=>{
+        const sectionTop=section.offsetTop;
+
+        const sectionHeight=section.clientHeight;
+
+        if(pageYOffset>=sectionTop -sectionHeight/1.5){
+            current=section.getAttribute('id');
+
+        }
+    });
+    btn_active.forEach(li=>{
+        li.classList.remove('active-link');
+        if( li.classList.contains(current)){
+            li.classList.add('active-link');
+
+        }
+    })
+})
+/*end*/
+/**** start typedtext*/
 const typedtext=document.querySelector('.typedtext');
 let arraytext=[' Jbeli Basma',' Web Developer',' Full Stack PHP'];
 const typingDelay =80;
