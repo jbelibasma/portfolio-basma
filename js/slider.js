@@ -1,9 +1,11 @@
 "user strict";
+
+
 let slider=document.querySelectorAll('.article-service');
-console.log(slider)
+// console.log(slider)
 let next=document.querySelector('.next');
 next.addEventListener('click',clicked);
-var pev=document.querySelector('.prev')
+let pev=document.querySelector('.prev');
 pev.addEventListener('click',Prevs)
 let j=0;
 function clicked()
@@ -19,6 +21,7 @@ function clicked()
     slider[j].classList.add('show-service');
 
 
+
    }
    else{
       slider[j].classList.remove('show-service');
@@ -30,6 +33,7 @@ function clicked()
     slider[j].classList.add('show-service');
 
    }
+   
   
 }
 function Prevs()
@@ -53,7 +57,7 @@ function Prevs()
     
 }
 let myineterval 
-function play() {
+function play( progress) {
    myineterval= setInterval( 
        
     
@@ -62,21 +66,29 @@ function play() {
          if(j==slider.length-1){
             slider[j].classList.remove('show-service');
             slider[j].classList.add('hide');
+            slider[j].style.right =j + 'px';
+
 
 
 
           j=0
           slider[j].classList.remove('hide')
           slider[j].classList.add('show-service');
+          slider[j].style.right =j + 'px';
+
 
          }
          else{
             slider[j].classList.remove('show-service');
             slider[j].classList.add('hide');
+            slider[j].style.right =j + 'px';
+
 
           j++
           slider[j].classList.remove('hide');
           slider[j].classList.add('show-service');
+          slider[j].style.right =j + 'px';
+
 
          }
         

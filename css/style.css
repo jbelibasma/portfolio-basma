@@ -235,9 +235,13 @@ h3{
     background-color:#11141b;
 
 }
+
+
+
     
 
 .section1-about,.section2-service{
+    /* width: 100%; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -376,9 +380,17 @@ background-color: #010208;
 }
 .show{
     display: block;
+    animation: slide 2s ease;
 }
 .hide{
     display: none !important;
+    animation: slide 2s ease;
+
+}
+@keyframes slide{
+   0%{ opacity:0; transform:translate(0);}
+   100%{ opacity:1; transform:translate(50%);}
+
 }
 .active, .link-active{
     color: #ffc209;
@@ -536,9 +548,7 @@ background-color: #010208;
 .row {
     display: flex;
     flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+    margin : 0 !important;
 }
 .section6{
     position: relative;
@@ -675,6 +685,7 @@ form .controls div div div input,form .controls div div div textarea{
     font-weight: 400;
     background: transparent;
     resize: none;
+    outline: none;
 }
 form .controls div div .after-btn{
     display: block;
@@ -728,12 +739,14 @@ form .controls div div .after-btn span:hover{
         max-width: 70rem;
         height: 100vh;
     }
+    /* .active{
+        height: 5vh;
+    } */
     /* header (logo and menu)*/
     .mobil-nav{
         display: flex;
         justify-content: center;
         font-family: 'Rubik', sans-serif;
-        padding-top: 4rem;
         position: fixed;
         z-index: 10;
 
@@ -741,9 +754,6 @@ form .controls div div .after-btn span:hover{
     /* .menu-position{
         position: relative;
     } */
-    .mobil-nav>a{
-        padding-left: 2rem;
-    }
     /* color logo*/
     .mobil-nav>a span{
         color: #ffc209;
@@ -751,11 +761,12 @@ form .controls div div .after-btn span:hover{
     /* header fixed en scroll*/
     .menu-header{
         position: fixed;
-        top: 5%;
+        top: 3%;
         right: 9%;
         transform: translate(5%-9%); 
         z-index: 3;
         font-size: 2rem;
+
     }
     /* start create button menu*/
     .menu-header .chek{
@@ -836,20 +847,45 @@ form .controls div div .after-btn span:hover{
     .active-menu{
         display: flex;
         flex-direction: column;
-        justify-content: space-between; 
-        margin-top: 8rem;
+        justify-content: center; 
+        /* position: absolute; */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* margin-top: 8rem; */
         text-align: center;
-        z-index: 10;
+        /* z-index: 10; */
         background-color: #fff;
-        width: 100vw;
-        height: 100%;
-        transition: opacity 0.4s ease;
+        transition: opacity 0.4s ease-in-out;
+        /* padding-top: 4rem; */
 
+
+    }
+    .nav a{
+        padding-left: 1rem;
 
     }
     .active-menu li a{
         color: #ffc209;
-        font-size: 3rem;
+        font-size: 2rem;
+        padding: 1rem 0;
+        margin: 0;
+
+    }
+    .single-services:nth-child(2),.single-services:nth-child(3){
+        display: none;
+    }
+    .single-services:nth-child(1) h3{
+        font-size: 1.6rem ;
+        text-align: center  ;
+    }
+    .single-services:nth-child(1){
+        font-size: 1.6rem;
+        padding: 0 3rem;
+        width: 100%; 
+        height: 55vh;  
+        text-align: center;    
 
     }
     /* .active{
@@ -880,8 +916,13 @@ form .controls div div .after-btn span:hover{
         left: 25%;
         /* transform: translate(100%-20%); */
     }
-    .section-service h2,.section-skills h2,.section-portfolio h2,.section-touch h2{
+    .section-skills h2,.section-portfolio h2,.section-touch h2{
         left: 35%;
+        font-size: 2.5rem;
+
+    }
+    .section-service h2{
+        left: 20%;
         font-size: 2.5rem;
 
     }
@@ -891,6 +932,12 @@ form .controls div div .after-btn span:hover{
      .portfolio-nav .nav ul, .footer-Designed{
 
          font-size: 1rem;
+     }
+     .section2-service{
+        width: 50vw;
+     }
+     .section2-service  li{
+        width: 100%;       
      }
          
      
