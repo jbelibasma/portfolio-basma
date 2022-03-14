@@ -206,10 +206,10 @@ for (let lien = 0; lien < links.length; lien++) {
                     contenu[l].style.display="flex";
         
                 }
-                // else if(navitem=="all"){
-                //     contenu[l].style.display="flex";
+                else if(navitem=="all"){
+                    contenu[l].style.display="flex";
         
-                // }
+                }
             }
         
         }
